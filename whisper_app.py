@@ -28,14 +28,14 @@ if audio_file is not None:
         # Load Whisper model
         model = whisper.load_model("medium", device="cpu")
 
-        # Transcribe the audio
-    try:
-   	 result = model.transcribe(tmp_path, language=target_language)
-    	st.subheader("📝 Transcription")
-    	st.write(result["text"])
-    except Exception as e:
-    	st.error("❌ Transcription failed!")
-    	st.exception(e)
+        # Transcribe the audio with error handling
+        try:
+            result = model.transcribe(tmp_path, language=target_language)
+            st.subheader("📝 Transcription")
+            st.write(result["text"])
+        except Exception as e:
+            st.error("❌ Transcription failed!")
+            st.exception(e)
 
 
         # Show transcription
