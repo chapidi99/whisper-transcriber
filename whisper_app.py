@@ -4,7 +4,7 @@ import tempfile
 import datetime
 import traceback
 
-st.title("🎧 Multilingual Audio Transcription with Whisper")
+st.title("🎧 Multilingual Audio Transcription with Whisper (MP3, WAV and m4a files only)")
 
 # Language selector
 target_language = st.selectbox(
